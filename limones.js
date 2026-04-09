@@ -7,6 +7,7 @@ const ANCHO_PERSONAJE=40;
 
 let personajeX=canvas.width/2;
 
+
 function iniciar(){
     dibujarPersonaje();
     dibujarSuelo();
@@ -22,6 +23,13 @@ function dibujarPersonaje(){
 }
 function moverIzquierda(){
     personajeX=personajeX-10;
+    actualizarPantalla();
+}
+function moverDerecha(){
+    personajeX=personajeX+10;
+    actualizarPantalla();
+}
+function actualizarPantalla(){
     limpiarCanva();
     dibujarSuelo();
     dibujarPersonaje();
@@ -29,3 +37,6 @@ function moverIzquierda(){
 function limpiarCanva(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
 }
+
+
+
