@@ -108,3 +108,13 @@ function detectarPiso(){
         }
     }
 }
+function reiniciar(){
+    vidas = 3;
+    puntaje = 0;
+    velocidadCaida = 200;
+    mostrarEnSpan("txtVidas", vidas);
+    mostrarEnSpan("txtPuntaje", puntaje);
+    limonY = 0;
+    clearInterval(intervalo);
+    iniciar();
+}
