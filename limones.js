@@ -104,16 +104,15 @@ function aparecerLimon(){
 }
 
 function detectarPiso(){
-    if(limonY+ALTO_LIMON==canvas.height-ALTURA_SUELO){
+    if (limonY + ALTO_LIMON >= canvas.height - ALTURA_SUELO){
         aparecerLimon();
-        vidas=vidas-1;
-        let componente=document.getElementById("txtVidas");
-        componente.textContent=vidas;
-        mostrarEnSpan("txtVidas",vidas);
-        if(vidas<0){
+        vidas = vidas - 1;
+
+        mostrarEnSpan("txtVidas", vidas);
+
+        if (vidas < 0){
             alert("GAME OVER");
             clearInterval(intervalo);
-
         }
     }
 }
