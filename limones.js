@@ -17,11 +17,20 @@ let velocidadCaida=200;
 let intervalo
 
 function iniciar(){
+    ajustarCanvas();
     intervalo = setInterval(bajarLimon, velocidadCaida);
     dibujarPersonaje();
     dibujarSuelo();
     dibujarLimon();
     aparecerLimon();
+
+function ajustarCanvas() {
+    canvas.width = canvas.clientWidth;
+    canvas.height = canvas.clientWidth * (400 / 600);
+
+    // 🔥 recalcular posiciones
+    personajeY = canvas.height - (ALTURA_SUELO + ALTURA_PERSONAJE);
+}
 
 }
 function dibujarSuelo(){
@@ -118,3 +127,8 @@ function reiniciar(){
     clearInterval(intervalo);
     iniciar();
 }
+
+window.addEventListener("resize", () => {
+    ajustarCanvas();
+    actualizarPantalla();
+});

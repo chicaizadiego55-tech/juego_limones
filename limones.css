@@ -135,3 +135,40 @@ canvas {
   /* efecto cyberpunk */
   filter: brightness(0.25) contrast(1.2) saturate(1.2);
 }
+/* ===== RESPONSIVE ===== */
+
+/* Canvas adaptable */
+canvas {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+
+/* Contenedor más flexible */
+.contenedor {
+  width: 95%;
+  max-width: 650px;
+}
+
+/* Ajustes para celular */
+@media (max-width: 600px) {
+
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .panel {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hud-box {
+    padding: 8px 15px;
+  }
+
+  .botones button {
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+
+}
